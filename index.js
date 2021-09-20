@@ -10,7 +10,7 @@ app.use(bodyParser.json({ limit: '10mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 
 
-//var conn = mysql.createPool(db_credentials);
+var conn = mysql.createPool(db_credentials);
 
 app.get('/', async (req,res)=>{
     /*const consulta = "select * from region where codRegion = 1";
@@ -22,12 +22,11 @@ app.get('/', async (req,res)=>{
 })
 
 app.get('/raiz', async (req,res)=>{
-    /*const consulta = "select * from region where codRegion = 1";
+    const consulta = "select * from prueba";
     let resulado = await conn.query(consulta, [], (err, response)=>{
         if(err) throw err;
         res.status(200).send(response);
-    })*/
-    res.send('Otra prueba');
+    })
 })
 //app.post('/login', (req,res)=>{
 
