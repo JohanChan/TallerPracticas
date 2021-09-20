@@ -13,11 +13,12 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 var conn = mysql.createPool(db_credentials);
 
 app.get('/', async (req,res)=>{
-    const consulta = "select * from region where codRegion = 1";
+    /*const consulta = "select * from region where codRegion = 1";
     let resulado = await conn.query(consulta, [], (err, response)=>{
         if(err) throw err;
         res.status(200).send(response);
-    })
+    })*/
+    res.send('Hola estoy corriendo en HEROKU!!');
 })
 
 app.post('/login', (req,res)=>{
