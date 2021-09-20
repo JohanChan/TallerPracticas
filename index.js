@@ -21,6 +21,14 @@ app.get('/', async (req,res)=>{
     res.send('Hola estoy corriendo en HEROKU!!');
 })
 
+app.get('/raiz', async (req,res)=>{
+    /*const consulta = "select * from region where codRegion = 1";
+    let resulado = await conn.query(consulta, [], (err, response)=>{
+        if(err) throw err;
+        res.status(200).send(response);
+    })*/
+    res.send('Otra prueba');
+})
 //app.post('/login', (req,res)=>{
 
     /**Consulta base de datos para Login */ 
