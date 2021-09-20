@@ -10,7 +10,7 @@ app.use(bodyParser.json({ limit: '10mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 
 
-var conn = mysql.createPool(db_credentials);
+//var conn = mysql.createPool(db_credentials);
 
 app.get('/', async (req,res)=>{
     /*const consulta = "select * from region where codRegion = 1";
@@ -21,27 +21,27 @@ app.get('/', async (req,res)=>{
     res.send('Hola estoy corriendo en HEROKU!!');
 })
 
-app.post('/login', (req,res)=>{
+//app.post('/login', (req,res)=>{
 
     /**Consulta base de datos para Login */ 
-    const { usuario, contra } = req.body;
-    let consulta = 'select * from Usuario where ?'
-    conn.query(consulta,[usuario,contra], (err, response)=>{
-        if(err) throw err;
-        res.send(response);
-    })
+//    const { usuario, contra } = req.body;
+//    let consulta = 'select * from Usuario where ?'
+//    conn.query(consulta,[usuario,contra], (err, response)=>{
+ //       if(err) throw err;
+//        res.send(response);
+//    })
     /***                       */
 
-    if(usuario === 'admin' && contra === 'admin'){
-        res.send('Credenciales correctas');
+//    if(usuario === 'admin' && contra === 'admin'){
+//        res.send('Credenciales correctas');
         /*res.json({ 
             "usuario": usuario,
             "contraseña": contra
          });*/
-    }else{
-        res.send('Credenciales incorrectas');
-    }
-})
+//    }else{
+//        res.send('Credenciales incorrectas');
+//    }
+//})
 
 
 app.listen(port, (err,res)=>{
