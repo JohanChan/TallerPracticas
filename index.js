@@ -5,7 +5,7 @@ const mysql = require('mysql');
 const { response } = require('express');
 
 const app = express();
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 9000;
 app.use(bodyParser.json({ limit: '10mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 
